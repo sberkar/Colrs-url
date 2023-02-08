@@ -22,7 +22,7 @@ const checkUrlCode = (code, cb) => {
 }
 
 router.get("/all", (req, res, next) => {
-    res.json([{
+    res.status(200).json([{
         urlTitle: "Facebook Profile",
         url: "https://www.facebook.com/sberkar12",
         code: "dY5txr4f"

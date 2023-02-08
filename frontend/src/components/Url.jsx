@@ -1,8 +1,8 @@
 function Url({ urlData }){
-    <div className="flex">
-        <div className="w-1/3">{urlData.title[0]}</div>
+    return <div className="flex w-[200px]">
+        <div className={`w-1/3 flex items-center justify-center color-[${urlData.bg}]`}>{urlData.urlTitle[0]}</div>
         <div className="w-2/3">
-            <h3>{urlData.title}</h3>
+            <h3>{urlData.urlTitle}</h3>
             <p><a href={`https://colrs.in/${urlData.code}`} >colrs.in/{urlData.code}</a></p>
         </div>
     </div>

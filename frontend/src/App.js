@@ -5,7 +5,7 @@ import CodeHandler from "./page/CodeHandler";
 import NotFound from "./page/Not-Found";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
 
   return (
     <div className="px-[100px]">
