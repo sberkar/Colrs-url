@@ -7,7 +7,7 @@ function UrlList() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch(`https://8000-sberkar-colrsurl-u4vsxfjzhe6.ws-us86.gitpod.io/api/url/all`).then(res => {
+        fetch(`https://8000-sberkar-colrsurl-u4vsxfjzhe6.ws-us87.gitpod.io/api/url/all`).then(res => {
             if(res.status === 200){
                 res.json().then(resData => {
                     console.log("result data", resData)
@@ -24,12 +24,9 @@ function UrlList() {
     }, [])
 
 
-    return <div>
+    return <div className="mt-8">
         <h2 className="text-3xl">All URLs</h2>
-        {!loading?<div>{error.length === 0?urls.map(url => {
-            console.log(url.code)
-            return <Url key={url.code} urlData={url} />
-            }):<div>{error.message}</div>}</div>:<div>Loading...</div>}
+        {!loading?<div>{error.length === 0?<div>{urls.length === 0?<div>No URLs Found</div>:<div className="grid grid-cols-3">{urls.map(url => <Url urlData={url} key={url.code} />)}</div>}</div>:<div>{error.message}</div>}</div>:<div>Loading...</div>}
     </div>
 }
 

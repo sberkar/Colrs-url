@@ -12,6 +12,11 @@ const urlSchema = new mongoose.Schema({
     code: {
         type: String,
         required: true
+    },
+    userId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 })
 
